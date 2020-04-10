@@ -1,6 +1,7 @@
 package domain.table;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 import domain.menu.Menu;
 import domain.menu.MenuAmount;
@@ -30,6 +31,22 @@ public class Table {
 
 	public boolean isSameTableNumber(TableNumber tableNumber) {
 		return number.equals(tableNumber);
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+		Table table = (Table)o;
+		return Objects.equals(number, table.number) &&
+				Objects.equals(bill, table.bill);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(number, bill);
 	}
 
 	@Override
