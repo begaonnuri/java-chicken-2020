@@ -19,6 +19,14 @@ public class Menu {
 		return number.equals(menuNumber);
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o)

@@ -1,8 +1,10 @@
 package view;
 
 import java.util.List;
+import java.util.Map;
 
 import domain.menu.Menu;
+import domain.menu.MenuAmount;
 import domain.table.Table;
 
 public class OutputView {
@@ -16,6 +18,18 @@ public class OutputView {
 		System.out.println("2 - 결제하기");
 		System.out.println("3 - 프로그램 종료");
 		System.out.println();
+	}
+
+	public static void printOrderInfo(final Table table) {
+		StringBuilder builder = new StringBuilder();
+		builder.append("## 주문 내역");
+		for (Map.Entry<Menu, MenuAmount> e : table.getBill().entrySet()) {
+			builder.append(e.getKey().getName());
+			builder.append(e.getValue());
+			builder.append("개");
+			builder.append(e.getKey().getPrice());
+		}
+		System.out.println(builder);
 	}
 
 	public static void printTables(final List<Table> tables) {

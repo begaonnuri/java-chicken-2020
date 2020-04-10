@@ -33,6 +33,10 @@ public class Table {
 		return number.equals(tableNumber);
 	}
 
+	public HashMap<Menu, MenuAmount> getBill() {
+		return bill;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o)
