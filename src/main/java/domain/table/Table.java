@@ -33,6 +33,10 @@ public class Table {
 		return number.equals(tableNumber);
 	}
 
+	public boolean isEmpty() {
+		return bill.isEmpty();
+	}
+
 	public TableNumber getNumber() {
 		return number;
 	}

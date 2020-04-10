@@ -11,6 +11,7 @@ public class OutputView {
 	private static final String TOP_LINE = "┌ ─ ┐";
 	private static final String TABLE_FORMAT = "| %s |";
 	private static final String BOTTOM_LINE = "└ ─ ┘";
+	private static final String ORDER_BOTTOM_LINE = "└ ₩ ┘";
 
 	private OutputView() {
 	}
@@ -63,6 +64,16 @@ public class OutputView {
 	private static void printTableNumbers(final List<Table> tables) {
 		for (final Table table : tables) {
 			System.out.printf(TABLE_FORMAT, table);
+		}
+		System.out.println();
+	}
+
+	private static void printBottomLine(final List<Table> tables) {
+		for (Table table : tables) {
+			if (table.isEmpty()) {
+				System.out.print(BOTTOM_LINE);
+			}
+			System.out.print(ORDER_BOTTOM_LINE);
 		}
 		System.out.println();
 	}
