@@ -6,12 +6,12 @@ import static view.OutputView.*;
 import java.util.List;
 
 import domain.Function;
-import domain.Table;
-import domain.TableRepository;
 import domain.menu.Menu;
 import domain.menu.MenuAmount;
 import domain.menu.MenuNumber;
 import domain.menu.MenuRepository;
+import domain.table.Table;
+import domain.table.TableRepository;
 import view.InputView;
 
 public class PosController {
@@ -23,7 +23,7 @@ public class PosController {
 			final List<Table> tables = TableRepository.tables();
 			printTables(tables);
 
-			final int tableNumber = InputView.inputTableNumber();
+			final String tableNumber = InputView.inputTableNumber();
 
 			final List<Menu> menus = MenuRepository.menus();
 			printMenus(menus);
