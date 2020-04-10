@@ -6,10 +6,11 @@ import static view.OutputView.*;
 import java.util.List;
 
 import domain.Function;
-import domain.Menu;
-import domain.MenuRepository;
 import domain.Table;
 import domain.TableRepository;
+import domain.menu.Menu;
+import domain.menu.MenuNumber;
+import domain.menu.MenuRepository;
 import view.InputView;
 
 public class PosController {
@@ -25,6 +26,8 @@ public class PosController {
 
 			final List<Menu> menus = MenuRepository.menus();
 			printMenus(menus);
+
+			final MenuNumber menuNumber = MenuNumber.of(inputMenuNumber());
 		}
 	}
 }
