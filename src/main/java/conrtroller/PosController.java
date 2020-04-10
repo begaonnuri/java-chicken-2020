@@ -11,8 +11,8 @@ import domain.menu.MenuAmount;
 import domain.menu.MenuNumber;
 import domain.menu.MenuRepository;
 import domain.table.Table;
+import domain.table.TableNumber;
 import domain.table.TableRepository;
-import view.InputView;
 
 public class PosController {
 	public void run() {
@@ -23,7 +23,7 @@ public class PosController {
 			final List<Table> tables = TableRepository.tables();
 			printTables(tables);
 
-			final String tableNumber = InputView.inputTableNumber();
+			final TableNumber tableNumber = TableNumber.of(inputTableNumber());
 
 			final List<Menu> menus = MenuRepository.menus();
 			printMenus(menus);
