@@ -27,6 +27,10 @@ public class TableNumber {
 		}
 	}
 
+	public int getNumber() {
+		return number;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o)
@@ -40,5 +44,10 @@ public class TableNumber {
 	@Override
 	public int hashCode() {
 		return Objects.hash(number);
+	}
+
+	@Override
+	public String toString() {
+		return number + "";
 	}
 }

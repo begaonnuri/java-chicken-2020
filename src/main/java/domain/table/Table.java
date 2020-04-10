@@ -33,6 +33,10 @@ public class Table {
 		return number.equals(tableNumber);
 	}
 
+	public TableNumber getNumber() {
+		return number;
+	}
+
 	public HashMap<Menu, MenuAmount> getBill() {
 		return bill;
 	}
@@ -55,9 +59,6 @@ public class Table {
 
 	@Override
 	public String toString() {
-		return "Table{" +
-				"number=" + number +
-				", bill=" + bill +
-				'}';
+		return number.toString();
 	}
 }

@@ -35,6 +35,10 @@ public class OutputView {
 		System.out.println(builder);
 	}
 
+	public static void printPayProceedMessage(final Table table) {
+		System.out.printf("## %d번 테이블의 결제를 진행합니다.\n", table.getNumber().getNumber());
+	}
+
 	public static void printTables(final List<Table> tables) {
 		System.out.println("## 테이블 목록");
 		final int size = tables.size();
