@@ -12,7 +12,11 @@ public class TableNumber {
 	}
 
 	public static TableNumber of(String input) {
-		return new TableNumber(Integer.parseInt(input));
+		return TableNumber.of(Integer.parseInt(input));
+	}
+
+	public static TableNumber of(int input) {
+		return new TableNumber(input);
 	}
 
 	private void validateBound(int number) {
