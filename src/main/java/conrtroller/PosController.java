@@ -19,17 +19,26 @@ public class PosController {
 		printMain();
 		Function function = Function.of(inputFunctionNumber());
 
+		final List<Table> tables = TableRepository.tables();
+		printTables(tables);
+
+		final TableNumber tableNumber = TableNumber.of(inputTableNumber());
+
+		Table table;
 		if (function == Function.ORDER) {
-			final List<Table> tables = TableRepository.tables();
-			printTables(tables);
-
-			final TableNumber tableNumber = TableNumber.of(inputTableNumber());
-
-			final List<Menu> menus = MenuRepository.menus();
-			printMenus(menus);
-
-			final MenuNumber menuNumber = MenuNumber.of(inputMenuNumber());
-			final MenuAmount menuAmount = MenuAmount.of(inputMenuAmount());
+			table = order(tableNumber);
 		}
+	}
+
+	private Table order(TableNumber tableNumber) {
+		final Table table = TableRepository.findByTableNumber(tableNumber);
+
+		final List<Menu> menus = MenuRepository.menus();
+		printMenus(menus);
+
+		final MenuNumber menuNumber = MenuNumber.of(inputMenuNumber());
+		final MenuAmount menuAmount = MenuAmount.of(inputMenuAmount());
+
+		return table.addMenu(menuNumber, menuAmount);
 	}
 }
