@@ -37,6 +37,18 @@ public class Table {
 		return bill.isEmpty();
 	}
 
+	public int calculateAmount() {
+		return bill.values().size();
+	}
+
+	public int calculateBill() {
+		return bill.entrySet()
+				.stream()
+				.map(e -> e.getKey().calculatePrice(e.getValue().getAmount()))
+				.mapToInt(Integer::intValue)
+				.sum();
+	}
+
 	public TableNumber getNumber() {
 		return number;
 	}

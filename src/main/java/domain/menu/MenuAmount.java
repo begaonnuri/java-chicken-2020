@@ -16,8 +16,12 @@ public class MenuAmount {
 	}
 
 	private void validateBound(int amount) {
-		if(amount < MIN_AMOUNT || amount > MAX_AMOUNT){
+		if (amount < MIN_AMOUNT || amount > MAX_AMOUNT) {
 			throw new IllegalArgumentException("메뉴는 1개 이상 99개 이하만 가능합니다.");
 		}
+	}
+
+	public int getAmount() {
+		return amount;
 	}
 }

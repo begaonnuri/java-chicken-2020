@@ -48,6 +48,11 @@ public class OutputView {
 		printBottomLine(tables);
 	}
 
+	public static void printResult(double money){
+		System.out.println("## 최종 결제할 금액");
+		System.out.println(money + "원");
+	}
+
 	public static void printMenus(final List<Menu> menus) {
 		for (final Menu menu : menus) {
 			System.out.println(menu);

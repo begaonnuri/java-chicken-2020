@@ -19,6 +19,10 @@ public class Menu {
 		return number.equals(menuNumber);
 	}
 
+	public int calculatePrice(int mount) {
+		return price * mount;
+	}
+
 	public String getName() {
 		return name;
 	}
