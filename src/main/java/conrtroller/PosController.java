@@ -9,6 +9,7 @@ import domain.Function;
 import domain.Table;
 import domain.TableRepository;
 import domain.menu.Menu;
+import domain.menu.MenuAmount;
 import domain.menu.MenuNumber;
 import domain.menu.MenuRepository;
 import view.InputView;
@@ -28,6 +29,7 @@ public class PosController {
 			printMenus(menus);
 
 			final MenuNumber menuNumber = MenuNumber.of(inputMenuNumber());
+			final MenuAmount menuAmount = MenuAmount.of(inputMenuAmount());
 		}
 	}
 }
