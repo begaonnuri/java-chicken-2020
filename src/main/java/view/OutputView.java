@@ -12,6 +12,9 @@ public class OutputView {
 	private static final String TABLE_FORMAT = "| %s |";
 	private static final String BOTTOM_LINE = "└ ─ ┘";
 
+	private OutputView() {
+	}
+
 	public static void printMain() {
 		System.out.println("## 메인화면");
 		System.out.println("1 - 주문등록");
