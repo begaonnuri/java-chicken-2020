@@ -20,7 +20,7 @@ public class MenuRepository {
 
 	public static Menu findByMenuNumber(MenuNumber menuNumber) {
 		return menus().stream()
-				.filter(menu -> menu.getNumber().equals(menuNumber))
+				.filter(menu -> menu.isSameMenuNumber(menuNumber))
 				.findFirst()
 				.orElseThrow(() -> new IllegalArgumentException("일치하는 메뉴가 없습니다."));
 	}

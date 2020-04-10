@@ -15,8 +15,8 @@ public class Menu {
 		this.price = price;
 	}
 
-	public MenuNumber getNumber() {
-		return number;
+	public boolean isSameMenuNumber(MenuNumber menuNumber) {
+		return number.equals(menuNumber);
 	}
 
 	@Override
