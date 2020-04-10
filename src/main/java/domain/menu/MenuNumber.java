@@ -1,6 +1,8 @@
 package domain.menu;
 
 public class MenuNumber {
+	private static final int MIN_MENU_NUMBER = 0;
+
 	private int number;
 
 	private MenuNumber(int number) {
@@ -13,7 +15,7 @@ public class MenuNumber {
 	}
 
 	private void validateBound(int number) {
-		if (number < 0) {
+		if (number < MIN_MENU_NUMBER) {
 			throw new IllegalArgumentException("0이상의 정수를 입력해주세요.");
 		}
 	}
